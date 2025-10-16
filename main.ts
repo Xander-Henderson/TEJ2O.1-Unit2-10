@@ -6,7 +6,7 @@
 */
 
 // variables
-let lightLevel: number = 0
+let lightLevelOfMicrobit: number = 0
 let xandersNeopixelStrip: neopixel.Strip = null
 
 // setup
@@ -17,38 +17,34 @@ xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
 xandersNeopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
 xandersNeopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
 xandersNeopixelStrip.show()
+lightLevelOfMicrobit = input.lightLevel()
 basic.showIcon(IconNames.Happy)
 
 // checks lightLevel and turns on neopixels
-input.lightLevel()
-if (51 >= lightLevel) {
+if (51 >= lightLevelOfMicrobit) {
     xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
     xandersNeopixelStrip.show()
 }
 
-input.lightLevel()
-if (52 < lightLevel) {
+if (52 < lightLevelOfMicrobit) {
     xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.White))
     xandersNeopixelStrip.show()
 }
 
-input.lightLevel()
-if (104 < lightLevel) {
+if (104 < lightLevelOfMicrobit) {
     xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.White))
     xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.White))
     xandersNeopixelStrip.show()
 }
 
-input.lightLevel()
-if (156 < lightLevel) {
+if (156 < lightLevelOfMicrobit) {
     xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.White))
     xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.White))
     xandersNeopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.White))
     xandersNeopixelStrip.show()
 }
 
-input.lightLevel()
-if (208 < lightLevel) {
+if (208 < lightLevelOfMicrobit) {
     xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.White))
     xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.White))
     xandersNeopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.White))
