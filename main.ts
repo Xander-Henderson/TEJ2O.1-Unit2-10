@@ -21,9 +21,11 @@ xandersNeopixelStrip.show()
 basic.showIcon(IconNames.Happy)
 
 input.onButtonPressed(Button.A, function () {
-    basic.showIcon(IconNames.Happy)
+    // get light level
     lightLevelOfMicrobit = input.lightLevel()
+    basic.showIcon(IconNames.Happy)
     basic.showNumber(lightLevelOfMicrobit)
+
     // checks lightLevel and turns on neopixels
     if (lightLevelOfMicrobit <= 51) {
         xandersNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
