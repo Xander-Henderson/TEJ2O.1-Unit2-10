@@ -11,43 +11,59 @@ let xandersNeopixelStrip: neopixel.Strip = null
 
 // setup
 basic.clearScreen()
-xandersNeopixelStrip = neopixel.create(DigitalPin.P16, 3, NeoPixelMode.RGB)
+lightLevelOfMicrobit = input.lightLevel()
+xandersNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
 xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
 xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Black))
 xandersNeopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Black))
 xandersNeopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Black))
 xandersNeopixelStrip.show()
-lightLevelOfMicrobit = input.lightLevel()
 basic.showIcon(IconNames.Happy)
 
-// checks lightLevel and turns on neopixels
-if (51 >= lightLevelOfMicrobit) {
-    xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
-    xandersNeopixelStrip.show()
-}
+input.onButtonPressed(Button.A, function () {
+    basic.showIcon(IconNames.Happy)
+    lightLevelOfMicrobit = input.lightLevel()
+    basic.showNumber(lightLevelOfMicrobit)
+    // checks lightLevel and turns on neopixels
+    if (lightLevelOfMicrobit <= 51) {
+        xandersNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+        xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Black))
+        xandersNeopixelStrip.show()
+        basic.showIcon(IconNames.Yes)
+    }
 
-if (52 < lightLevelOfMicrobit) {
-    xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.White))
-    xandersNeopixelStrip.show()
-}
+    if (lightLevelOfMicrobit > 52) {
+        xandersNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+        xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
+        xandersNeopixelStrip.show()
+        basic.showIcon(IconNames.Yes)
+    }
 
-if (104 < lightLevelOfMicrobit) {
-    xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.White))
-    xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.White))
-    xandersNeopixelStrip.show()
-}
+    if (lightLevelOfMicrobit > 104) {
+        xandersNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+        xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
+        xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+        xandersNeopixelStrip.show()
+        basic.showIcon(IconNames.Yes)
+    }
 
-if (156 < lightLevelOfMicrobit) {
-    xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.White))
-    xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.White))
-    xandersNeopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.White))
-    xandersNeopixelStrip.show()
-}
+    if (lightLevelOfMicrobit > 156) {
+        xandersNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+        xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
+        xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+        xandersNeopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+        xandersNeopixelStrip.show()
+        basic.showIcon(IconNames.Yes)
+    }
 
-if (208 < lightLevelOfMicrobit) {
-    xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.White))
-    xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.White))
-    xandersNeopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.White))
-    xandersNeopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.White))
-    xandersNeopixelStrip.show()
-}
+    if (lightLevelOfMicrobit > 208) {
+        xandersNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
+        xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
+        xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
+        xandersNeopixelStrip.setPixelColor(2, neopixel.colors(NeoPixelColors.Green))
+        xandersNeopixelStrip.setPixelColor(3, neopixel.colors(NeoPixelColors.Green))
+        xandersNeopixelStrip.show()
+        basic.showIcon(IconNames.Yes)
+    }
+
+})
