@@ -24,7 +24,8 @@ input.onButtonPressed(Button.A, function () {
     // get light level
     lightLevelOfMicrobit = input.lightLevel()
     basic.showIcon(IconNames.Happy)
-    basic.showNumber(lightLevelOfMicrobit)
+    basic.clearScreen()
+    basic.showString("" + lightLevelOfMicrobit.toString())
 
     // checks lightLevel and turns on neopixels
     if (lightLevelOfMicrobit <= 51) {
