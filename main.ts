@@ -36,6 +36,7 @@ input.onButtonPressed(Button.A, function () {
     }
 
     if (lightLevelOfMicrobit > 52) {
+        // turns on one neopixel
         xandersNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
         xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
         xandersNeopixelStrip.show()
@@ -43,6 +44,7 @@ input.onButtonPressed(Button.A, function () {
     }
 
     if (lightLevelOfMicrobit > 104) {
+        // turns on two neopixels
         xandersNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
         xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
         xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
@@ -51,6 +53,7 @@ input.onButtonPressed(Button.A, function () {
     }
 
     if (lightLevelOfMicrobit > 156) {
+        // turns on three neopixels
         xandersNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
         xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
         xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
@@ -60,6 +63,7 @@ input.onButtonPressed(Button.A, function () {
     }
 
     if (lightLevelOfMicrobit > 208) {
+        // turns on four neopixels
         xandersNeopixelStrip = neopixel.create(DigitalPin.P16, 4, NeoPixelMode.RGB)
         xandersNeopixelStrip.setPixelColor(0, neopixel.colors(NeoPixelColors.Green))
         xandersNeopixelStrip.setPixelColor(1, neopixel.colors(NeoPixelColors.Green))
